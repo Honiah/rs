@@ -7,20 +7,10 @@ sudo: required
 services:
   - postgresql
 
-
-before_script:
-  - sudo /etc/init.d/mysql stop
-  - sudo /etc/init.d/mysql start
-    
 before_install:
   - chmod +x mvnw
   - psql -c "CREATE DATABASE testing_db;" -U postgres
   
-# safelist
-branches:
-  only:
-  - postgres
-
 deploy:
  provider: heroku
  api-key: 
