@@ -10,9 +10,3 @@ services:
 before_install:
   - chmod +x mvnw
   - psql -c "CREATE DATABASE testing_db;" -U postgres
-  
-deploy:
- provider: heroku
- api-key: 
-  secure: $HEROKU_API_KEY
-app: tkareactspring
